@@ -1,0 +1,24 @@
+<h1>All Restaurants</h1>
+
+<p>A list of my favorite restaurants</p>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <a href="restaurants/<%= restaurant.id %>">
+        <%= restaurant.name %>
+      </a>
+    </li>
+  <% end %>
+
+</ul>
+
+<form action="/restaurants" method="post">
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name">
+
+  <label for="city">City</label>
+  <input type="text" name="city" id="city">
+
+  <input type="submit">
+</form>
